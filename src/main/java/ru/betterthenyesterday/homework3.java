@@ -14,14 +14,16 @@ public class homework3 {
     static int push123123123;
 
     public static void main(String[] args) {
-        quessTheNumber();
-        sufferAgainPlz();
+        do {
+            quessTheNumber();
+            repeatGame();
+        } while (repeatGame == 1);
     }
 
     private static void quessTheNumber() {
         System.out.println("Угадайте число от 0 до 9");
+        System.out.println("Введите число ");
         do {
-            System.out.println("Введите число ");
             userNumber = sc.nextInt();
             if (x == userNumber) {
                 System.out.println("Вы угадали число!");
@@ -36,7 +38,7 @@ public class homework3 {
         } while (tryGuess > 0);
     }
 
-    public static void sufferAgainPlz() {
+    public static int repeatGame() {
         do {
             System.out.println("Повторить игру ещё раз?");
             System.out.println("1. Мне повезёт!");
@@ -46,12 +48,13 @@ public class homework3 {
 
         switch (repeatGame) {
             case 1:
-                System.out.println("321");
+                System.out.println("Поехали!");
                 break;
             case 2:
-                System.out.println("123");
+                System.out.println("Ну как хочешь.");
                 break;
         }
+        return repeatGame;
     }
 }
 
